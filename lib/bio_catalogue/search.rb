@@ -28,6 +28,8 @@ module BioCatalogue
     def self.scope_to_visible_search_type(scope)
       return "" if scope.blank?
       case scope  
+        when Array
+          scope.map { |s| scope_to_visible_search_type(s) }.join(", ")
         when "soap_operations"
           "SOAP Operations"
         when "rest_methods"

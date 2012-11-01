@@ -183,6 +183,7 @@ class SearchController < ApplicationController
       @scope = scope
       
       @visible_search_type = BioCatalogue::Search.scope_to_visible_search_type(@scope) unless is_api_request?
+      puts "***\n#{@visible_search_type}\n***"
 
       @results = nil
 

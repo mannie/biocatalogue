@@ -16,7 +16,7 @@
 	<% if @query.blank? %>
 		<li><span>Please specify a search query...</span></li>
 	<% else %>
-		<li><span><%= @scope.titleize -%></span></li>
+		<li><span><%= @visible_search_type -%></span></li>
 		<li><b>&#187;</b></li> 
 		<li><span><%= "Results for '#{h(@query)}'" -%></span></li>
 	<% end %>

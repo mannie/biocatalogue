@@ -138,10 +138,12 @@
 				<%= link_to "Search for ALL items", search_url(:q => @query), :class => "button_slim", :style => "margin-left: 1.5em;" -%>
 			</span>
 			
-			<%= render :partial => 'widgets/pagination_top', :locals => { :paginated_items => item_ids, :entry_name => @scope.gsub('_', ' ').singularize } %>
+			<%= render :partial => 'widgets/pagination_top', :locals => { :paginated_items => item_ids, :entry_name => @visible_search_type } %>
 			
 			<div id="search_results" style="margin: 2em 0;">
-				<%= render :partial => "#{@scope}/listing", :locals => { :items => items } %>
+			  <% @scope.each do |scope| %>
+				<%= render :partial => "#{scope}/listing", :locals => { :items => items } %>
+				<% end %>
 			</div>
 				
 			<%= render :partial => 'widgets/pagination_bottom', :locals => { :paginated_items => item_ids } %>
