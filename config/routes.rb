@@ -252,7 +252,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :services,
                 :collection => { :filters => :get,
-                                 :filtered_index => :post },
+                                 :filtered_index => :post,
+                                 :bmb => :get},
                 :member => { :categorise => :post,
                              :summary => :get,
                              :annotations => :get,
